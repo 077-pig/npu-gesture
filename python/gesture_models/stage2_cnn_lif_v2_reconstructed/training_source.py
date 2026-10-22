@@ -11,6 +11,7 @@ No EMA, auxiliary current loss, pretrained initialization or test-based selectio
 import argparse
 import hashlib
 import json
+import os
 import platform
 import random
 from pathlib import Path
@@ -21,8 +22,8 @@ from torch import nn
 from torch.utils.data import DataLoader, Dataset
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_DATA = Path(__file__).resolve().parents[3] / "data" / "DVS128Gesture"
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_DATA = Path(__file__).resolve().parents[4] / "data" / "DVS128Gesture"
 DEFAULT_OUTPUT = PROJECT_ROOT / "gesture_models" / "stage2_cnn_lif_v2_reconstructed"
 REFERENCE_REPORT = PROJECT_ROOT / "gesture_models" / "stage2_cnn_lif_improved_v2" / "cnn_lif_improved_report.json"
 CONFIG = {
@@ -338,7 +339,7 @@ def main():
                   "torch": str(torch.__version__), "device": str(device), "platform": platform.platform(),
                   "cuda": torch.version.cuda, "cudnn": torch.backends.cudnn.version(),
                   "cpu_threads": torch.get_num_threads(), "script_sha256": sha256_file(Path(__file__)),
-                  "inputs": {str(p.resolve()): sha256_file(p) for p in (args.cache, args.metadata)},
+                  "inputs": {Path(os.path.relpath(p.resolve(), PROJECT_ROOT.parents[1])).as_posix(): sha256_file(p) for p in (args.cache, args.metadata)},
                   "reference_report_sha256": sha256_file(REFERENCE_REPORT) if REFERENCE_REPORT.is_file() else None,
                   "historical_source_recovered": False, "historical_weight_equality_guaranteed": False}
     print("训练V2重建版：无EMA、无辅助损失、无预训练权重；只用验证集选择模型", flush=True)

@@ -15,7 +15,7 @@ import torch
 # gesture_models/stage2_quantized/quantize_cnn_lif.py
 # parents[0] = stage2_quantized
 # parents[1] = gesture_models
-# parents[2] = 16x8_NPU_CNN工程根目录
+# parents[2] = Python目录；工程根目录由其上级路径推导
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 FLOAT_MODEL_PATH = (
@@ -287,8 +287,8 @@ def main() -> None:
             "weight_range": [-127, 127],
             "bias_type": "not_quantized_yet",
         },
-        "source_model": str(FLOAT_MODEL_PATH),
-        "output_npz": str(OUTPUT_NPZ),
+        "source_model": FLOAT_MODEL_PATH.relative_to(PROJECT_ROOT.parents[1]).as_posix(),
+        "output_npz": OUTPUT_NPZ.relative_to(PROJECT_ROOT.parents[1]).as_posix(),
         "parameters": parameter_info,
         "weight_errors": errors,
     }

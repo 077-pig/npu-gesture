@@ -283,7 +283,9 @@ def write_blob_assembly(paths: list[Path]) -> Path:
     ]
 
     for symbol, path in zip(names, paths):
-        asm_path = path.resolve().as_posix()
+        # SDK invokes the assembler from the Debug build directory.  Resolve
+        # embedded data through the source directory, independent of the PC.
+        asm_path = f"../src/{path.name}"
         lines.extend(
             [
                 f"    .global {symbol}",

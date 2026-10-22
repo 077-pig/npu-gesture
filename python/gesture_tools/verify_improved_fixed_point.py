@@ -13,6 +13,7 @@ import argparse
 import hashlib
 import importlib.util
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -191,7 +192,7 @@ def main() -> None:
     verify.main()
     report = json.loads(verify.OUTPUT_PATH.read_text(encoding="utf-8"))
     report["model_version"] = arguments.model
-    report["source_model"] = str(verify.FLOAT_MODEL_PATH)
+    report["source_model"] = Path(os.path.relpath(verify.FLOAT_MODEL_PATH, PROJECT_ROOT.parents[1])).as_posix()
     report["source_model_sha256"] = hashlib.sha256(
         verify.FLOAT_MODEL_PATH.read_bytes()
     ).hexdigest()

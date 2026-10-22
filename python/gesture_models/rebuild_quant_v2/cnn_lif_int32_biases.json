@@ -1,6 +1,6 @@
 {
   "model": "cnn_lif_threshold_0.5",
-  "float_model": "C:\\Users\\LiQ\\Desktop\\game\\src\\Python\\gesture_models\\stage2_cnn_lif_v2_reconstructed\\cnn_lif_improved_best.pt",
+  "float_model": "src/Python/gesture_models/stage2_cnn_lif_v2_reconstructed/cnn_lif_improved_best.pt",
   "input_scale": 0.007874015748031496,
   "biases": {
     "conv1.bias": {
@@ -48,5 +48,5 @@
       "max": 287
     }
   },
-  "output_npz": "C:\\Users\\LiQ\\Desktop\\game\\src\\Python\\gesture_models\\rebuild_quant_v2\\cnn_lif_int32_biases.npz"
+  "output_npz": "src/Python/gesture_models/rebuild_quant_v2\\cnn_lif_int32_biases.npz"
 }

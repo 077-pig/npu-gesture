@@ -1,0 +1,30 @@
+{
+  "gesture_input_sample0.bin": {
+    "bytes": 1048576,
+    "sha256": "af9985a9fe05b7c36dec56f31da4e0d7ccde4b8d7966366c2c6379cf7a1ab6af"
+  },
+  "gesture_conv_weights.bin": {
+    "bytes": 108800,
+    "sha256": "7e3dcded64564a2c58f521b8233dd83e4d94e31673f2e4fa6beef6907cae0d1f"
+  },
+  "gesture_fc_weights.bin": {
+    "bytes": 704,
+    "sha256": "c9c56e7895e6cf4e6ed630544915864017b59f4213d85a684654daf5327eb1f7"
+  },
+  "gesture_layer_desc.bin": {
+    "bytes": 96,
+    "sha256": "96285f8609e1b65b1c7d2067131f424fe21fde024cb580edf8e1fe4c081417c1"
+  },
+  "gesture_layer_param.bin": {
+    "bytes": 36,
+    "sha256": "1b15ac87f41c851513c2c59c06684cfbd44f6b45a4f60ac257bf12cbf809b145"
+  },
+  "gesture_sdk_params.h": {
+    "bytes": 3414,
+    "sha256": "88e65355cb77ed08ec52ae620241096eb63ce52b234708b72013e5af81452131"
+  },
+  "gesture_data_blob.S": {
+    "bytes": 1510,
+    "sha256": "797b1d487e269ee71873a2be3f0c5b70f447944ad5446ae39c5e96e5f57b91fb"
+  }
+}

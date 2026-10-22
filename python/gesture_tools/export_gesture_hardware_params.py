@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 import json
+import os
 import sys
 
 import numpy as np
@@ -204,7 +205,7 @@ def main() -> None:
     )
 
     (output_dir / "gesture_hardware_config.json").write_text(json.dumps({
-        "source_quant_dir": str(quant_dir),
+        "source_quant_dir": Path(os.path.relpath(quant_dir, PROJECT_ROOT.parents[1])).as_posix(),
         "input": {"width": 64, "height": 64, "channels": 2, "time_steps": 16},
         "layers": layer_reports,
         "quant_params": quant_records,

@@ -262,7 +262,7 @@ def main() -> None:
 
     report = {
         "model": "cnn_lif_threshold_0.5",
-        "float_model": str(FLOAT_MODEL_PATH),
+        "float_model": FLOAT_MODEL_PATH.relative_to(PROJECT_ROOT.parents[1]).as_posix(),
         "input_scale": input_scale,
         "biases": {
             "conv1.bias": {
@@ -302,7 +302,7 @@ def main() -> None:
                 "max": int(q_classifier_bias.max()),
             },
         },
-        "output_npz": str(OUTPUT_NPZ),
+        "output_npz": OUTPUT_NPZ.relative_to(PROJECT_ROOT.parents[1]).as_posix(),
     }
 
     OUTPUT_JSON.write_text(

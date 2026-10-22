@@ -361,8 +361,8 @@ def main() -> None:
     add_activation_scales(range_info)
 
     report = {
-        "source_model": str(FLOAT_MODEL_PATH),
-        "calibration_dataset": str(CACHE_PATH),
+        "source_model": FLOAT_MODEL_PATH.relative_to(PROJECT_ROOT.parents[1]).as_posix(),
+        "calibration_dataset": CACHE_PATH.relative_to(PROJECT_ROOT.parents[1]).as_posix(),
         "calibration_rule": "user01-user19 only",
         "sample_count": int(len(train_indices)),
         "time_steps": 16,

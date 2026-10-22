@@ -8,7 +8,7 @@
 
 1. 打开 ModelSim。
 2. 点击菜单 `File` -> `Change Directory...`。
-3. 选择 `C:\Users\LiQ\Desktop\16x8_NPU_CNN\TB`，点击 `选择文件夹`。
+3. 选择项目中的 `game/sim/TB` 文件夹，点击 `选择文件夹`。
 4. 在下方 `Transcript` 窗口输入：
 
    ```tcl

@@ -36,8 +36,8 @@
     "cpu_threads": 4,
     "script_sha256": "04dd74eaf804da44f32da70e5402492418468ef5528af76423e2af0b6c2ac5ac",
     "inputs": {
-      "C:\\Users\\LiQ\\Desktop\\game\\data\\DVS128Gesture\\frames_t16_uint16.npz": "f04834ae98e814515c108e01c12ae0d6cb3e11bce07958bd94a850bde4e29436",
-      "C:\\Users\\LiQ\\Desktop\\game\\data\\DVS128Gesture\\frames_t16_uint16.json": "4dde4cb11911d54057ff64ddde8dc7a4da2361b707fd57a2d2594634f618a216"
+      "data/DVS128Gesture/frames_t16_uint16.npz": "f04834ae98e814515c108e01c12ae0d6cb3e11bce07958bd94a850bde4e29436",
+      "data/DVS128Gesture/frames_t16_uint16.json": "4dde4cb11911d54057ff64ddde8dc7a4da2361b707fd57a2d2594634f618a216"
     },
     "reference_report_sha256": null,
     "historical_source_recovered": false,

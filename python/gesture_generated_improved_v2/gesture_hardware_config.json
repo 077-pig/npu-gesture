@@ -1,5 +1,5 @@
 {
-  "source_quant_dir": "C:\\Users\\LiQ\\Desktop\\game\\src\\Python\\gesture_models\\rebuild_quant_v2",
+  "source_quant_dir": "src/Python/gesture_models/rebuild_quant_v2",
   "input": {
     "width": 64,
     "height": 64,
