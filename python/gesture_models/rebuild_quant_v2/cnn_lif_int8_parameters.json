@@ -1,0 +1,148 @@
+{
+  "model": "cnn_lif_threshold_0.5",
+  "input_scale": 0.007874015748031496,
+  "quantization": {
+    "weight_type": "symmetric_int8",
+    "weight_range": [
+      -127,
+      127
+    ],
+    "bias_type": "not_quantized_yet"
+  },
+  "source_model": "C:\\Users\\LiQ\\Desktop\\game\\src\\Python\\gesture_models\\stage2_cnn_lif_v2_reconstructed\\cnn_lif_improved_best.pt",
+  "output_npz": "C:\\Users\\LiQ\\Desktop\\game\\src\\Python\\gesture_models\\rebuild_quant_v2\\cnn_lif_int8_parameters.npz",
+  "parameters": {
+    "conv1.weight": {
+      "kind": "weight",
+      "shape": [
+        16,
+        2,
+        3,
+        3
+      ],
+      "float_dtype": "float32",
+      "quantized_dtype": "int8",
+      "scale": 0.016888875660933847,
+      "min_float": -2.1448872089385986,
+      "max_float": 1.3267536163330078,
+      "max_abs_float": 2.1448872089385986,
+      "q_min": -127,
+      "q_max": 79
+    },
+    "conv1.bias": {
+      "kind": "bias_or_vector",
+      "shape": [
+        16
+      ],
+      "float_dtype": "float32",
+      "quantized_dtype": "not_yet_quantized",
+      "note": "偏置需要结合输入激活scale和权重scale，将在激活校准后量化为INT32",
+      "min_float": -0.12391642481088638,
+      "max_float": 0.32273709774017334
+    },
+    "conv2.weight": {
+      "kind": "weight",
+      "shape": [
+        32,
+        16,
+        3,
+        3
+      ],
+      "float_dtype": "float32",
+      "quantized_dtype": "int8",
+      "scale": 0.01463357013041579,
+      "min_float": -1.8584634065628052,
+      "max_float": 1.28900945186615,
+      "max_abs_float": 1.8584634065628052,
+      "q_min": -127,
+      "q_max": 88
+    },
+    "conv2.bias": {
+      "kind": "bias_or_vector",
+      "shape": [
+        32
+      ],
+      "float_dtype": "float32",
+      "quantized_dtype": "not_yet_quantized",
+      "note": "偏置需要结合输入激活scale和权重scale，将在激活校准后量化为INT32",
+      "min_float": -0.27826619148254395,
+      "max_float": 0.3660747706890106
+    },
+    "conv3.weight": {
+      "kind": "weight",
+      "shape": [
+        64,
+        32,
+        3,
+        3
+      ],
+      "float_dtype": "float32",
+      "quantized_dtype": "int8",
+      "scale": 0.013782414864367388,
+      "min_float": -1.7503666877746582,
+      "max_float": 0.8542623519897461,
+      "max_abs_float": 1.7503666877746582,
+      "q_min": -127,
+      "q_max": 62
+    },
+    "conv3.bias": {
+      "kind": "bias_or_vector",
+      "shape": [
+        64
+      ],
+      "float_dtype": "float32",
+      "quantized_dtype": "not_yet_quantized",
+      "note": "偏置需要结合输入激活scale和权重scale，将在激活校准后量化为INT32",
+      "min_float": -0.4730239808559418,
+      "max_float": 0.19721415638923645
+    },
+    "classifier.weight": {
+      "kind": "weight",
+      "shape": [
+        11,
+        64
+      ],
+      "float_dtype": "float32",
+      "quantized_dtype": "int8",
+      "scale": 0.009174085977509266,
+      "min_float": -1.1651089191436768,
+      "max_float": 0.8403981924057007,
+      "max_abs_float": 1.1651089191436768,
+      "q_min": -127,
+      "q_max": 92
+    },
+    "classifier.bias": {
+      "kind": "bias_or_vector",
+      "shape": [
+        11
+      ],
+      "float_dtype": "float32",
+      "quantized_dtype": "not_yet_quantized",
+      "note": "偏置需要结合输入激活scale和权重scale，将在激活校准后量化为INT32",
+      "min_float": -0.11120441555976868,
+      "max_float": 0.22486916184425354
+    }
+  },
+  "weight_errors": {
+    "conv1.weight": {
+      "max_absolute_error": 0.00843120738863945,
+      "mean_absolute_error": 0.004415344912558794,
+      "rmse": 0.0050202831625938416
+    },
+    "conv2.weight": {
+      "max_absolute_error": 0.007314890623092651,
+      "mean_absolute_error": 0.0036761132068932056,
+      "rmse": 0.0042320783250033855
+    },
+    "conv3.weight": {
+      "max_absolute_error": 0.006890414282679558,
+      "mean_absolute_error": 0.0034494856372475624,
+      "rmse": 0.003985706251114607
+    },
+    "classifier.weight": {
+      "max_absolute_error": 0.004565291106700897,
+      "mean_absolute_error": 0.002273100195452571,
+      "rmse": 0.0026155097875744104
+    }
+  }
+}

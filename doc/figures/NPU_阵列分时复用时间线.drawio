@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device" version="24.7.17">
+  <diagram id="reuse-timeline" name="阵列分时复用时间线">
+    <mxGraphModel dx="1800" dy="980" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="980" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="16×8物理阵列的分时复用时间线" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=31;fontStyle=1;rounded=0;fillColor=#F3F6FA;strokeColor=#72859A;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="60" y="25" width="1680" height="70" />
+        </mxCell>
+        <mxCell id="array" value="固定硬件实例&#10;16×8卷积阵列&#10;128个PE&#10;instance = 1" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=25;fontStyle=1;rounded=0;fillColor=#E4F0EC;strokeColor=#558071;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="70" y="210" width="220" height="170" />
+        </mxCell>
+        <mxCell id="cell_0_0" value="Conv1&#10;同一套16×8阵列&#10;layer_index = 0" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=17;fontStyle=1;rounded=0;fillColor=#DCEAF5;strokeColor=#5E7C8E;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="350" y="215" width="130" height="160" />
+        </mxCell>
+        <mxCell id="cell_0_1" value="Conv2&#10;同一套16×8阵列&#10;layer_index = 1" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=17;fontStyle=1;rounded=0;fillColor=#E2F0E8;strokeColor=#5E7C8E;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="490" y="215" width="130" height="160" />
+        </mxCell>
+        <mxCell id="cell_0_2" value="Conv3&#10;同一套16×8阵列&#10;layer_index = 2" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=17;fontStyle=1;rounded=0;fillColor=#F8E7D7;strokeColor=#5E7C8E;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="630" y="215" width="130" height="160" />
+        </mxCell>
+        <mxCell id="cell_1_0" value="Conv1&#10;同一套16×8阵列&#10;layer_index = 0" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=17;fontStyle=1;rounded=0;fillColor=#DCEAF5;strokeColor=#5E7C8E;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="800" y="215" width="130" height="160" />
+        </mxCell>
+        <mxCell id="cell_1_1" value="Conv2&#10;同一套16×8阵列&#10;layer_index = 1" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=17;fontStyle=1;rounded=0;fillColor=#E2F0E8;strokeColor=#5E7C8E;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="940" y="215" width="130" height="160" />
+        </mxCell>
+        <mxCell id="cell_1_2" value="Conv3&#10;同一套16×8阵列&#10;layer_index = 2" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=17;fontStyle=1;rounded=0;fillColor=#F8E7D7;strokeColor=#5E7C8E;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1080" y="215" width="130" height="160" />
+        </mxCell>
+        <mxCell id="cell_2_0" value="Conv1&#10;同一套16×8阵列&#10;layer_index = 0" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=17;fontStyle=1;rounded=0;fillColor=#DCEAF5;strokeColor=#5E7C8E;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1250" y="215" width="130" height="160" />
+        </mxCell>
+        <mxCell id="cell_2_1" value="Conv2&#10;同一套16×8阵列&#10;layer_index = 1" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=17;fontStyle=1;rounded=0;fillColor=#E2F0E8;strokeColor=#5E7C8E;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1390" y="215" width="130" height="160" />
+        </mxCell>
+        <mxCell id="cell_2_2" value="Conv3&#10;同一套16×8阵列&#10;layer_index = 2" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=17;fontStyle=1;rounded=0;fillColor=#F8E7D7;strokeColor=#5E7C8E;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1530" y="215" width="130" height="160" />
+        </mxCell>
+        <mxCell id="bank" value="特征缓存&#10;A/B ping-pong&#10;上一层输出作为下一层输入" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=21;fontStyle=0;rounded=0;fillColor=#F2F6FA;strokeColor=#8197AA;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="70" y="555" width="220" height="135" />
+        </mxCell>
+        <mxCell id="params" value="层参数表&#10;layer_desc / layer_param&#10;权重基址、量化参数" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=21;fontStyle=0;rounded=0;fillColor=#FFF7E8;strokeColor=#B69A69;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="70" y="760" width="220" height="135" />
+        </mxCell>
+        <mxCell id="param_0_0" value="L1参数&#10;权重区间 + 量化" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=15;fontStyle=0;rounded=0;fillColor=#FFF7E8;strokeColor=#B69A69;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="350" y="780" width="130" height="75" />
+        </mxCell>
+        <mxCell id="param_0_1" value="L2参数&#10;权重区间 + 量化" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=15;fontStyle=0;rounded=0;fillColor=#FFF7E8;strokeColor=#B69A69;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="490" y="780" width="130" height="75" />
+        </mxCell>
+        <mxCell id="param_0_2" value="L3参数&#10;权重区间 + 量化" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=15;fontStyle=0;rounded=0;fillColor=#FFF7E8;strokeColor=#B69A69;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="630" y="780" width="130" height="75" />
+        </mxCell>
+        <mxCell id="param_1_0" value="L1参数&#10;权重区间 + 量化" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=15;fontStyle=0;rounded=0;fillColor=#FFF7E8;strokeColor=#B69A69;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="800" y="780" width="130" height="75" />
+        </mxCell>
+        <mxCell id="param_1_1" value="L2参数&#10;权重区间 + 量化" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=15;fontStyle=0;rounded=0;fillColor=#FFF7E8;strokeColor=#B69A69;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="940" y="780" width="130" height="75" />
+        </mxCell>
+        <mxCell id="param_1_2" value="L3参数&#10;权重区间 + 量化" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=15;fontStyle=0;rounded=0;fillColor=#FFF7E8;strokeColor=#B69A69;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1080" y="780" width="130" height="75" />
+        </mxCell>
+        <mxCell id="param_2_0" value="L1参数&#10;权重区间 + 量化" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=15;fontStyle=0;rounded=0;fillColor=#FFF7E8;strokeColor=#B69A69;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1250" y="780" width="130" height="75" />
+        </mxCell>
+        <mxCell id="param_2_1" value="L2参数&#10;权重区间 + 量化" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=15;fontStyle=0;rounded=0;fillColor=#FFF7E8;strokeColor=#B69A69;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1390" y="780" width="130" height="75" />
+        </mxCell>
+        <mxCell id="param_2_2" value="L3参数&#10;权重区间 + 量化" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=15;fontStyle=0;rounded=0;fillColor=#FFF7E8;strokeColor=#B69A69;strokeWidth=1.3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1530" y="780" width="130" height="75" />
+        </mxCell>
+        <mxCell id="seq_0_0" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#68717C;endArrow=block;endFill=1;dashed=1;dashPattern=9 4 2 4;" edge="1" parent="1" source="cell_0_0" target="cell_0_1">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="480" y="295.0" />
+            <mxPoint as="targetPoint" x="490" y="295.0" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_0_1" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#68717C;endArrow=block;endFill=1;dashed=1;dashPattern=9 4 2 4;" edge="1" parent="1" source="cell_0_1" target="cell_0_2">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="620" y="295.0" />
+            <mxPoint as="targetPoint" x="630" y="295.0" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="time_0_next" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2F6388;endArrow=block;endFill=1;" edge="1" parent="1" source="cell_0_2" target="cell_1_0">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="760" y="411" />
+            <mxPoint as="targetPoint" x="800" y="411" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_1_0" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#68717C;endArrow=block;endFill=1;dashed=1;dashPattern=9 4 2 4;" edge="1" parent="1" source="cell_1_0" target="cell_1_1">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="930" y="295.0" />
+            <mxPoint as="targetPoint" x="940" y="295.0" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_1_1" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#68717C;endArrow=block;endFill=1;dashed=1;dashPattern=9 4 2 4;" edge="1" parent="1" source="cell_1_1" target="cell_1_2">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1070" y="295.0" />
+            <mxPoint as="targetPoint" x="1080" y="295.0" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="time_1_next" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2F6388;endArrow=block;endFill=1;" edge="1" parent="1" source="cell_1_2" target="cell_2_0">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1210" y="411" />
+            <mxPoint as="targetPoint" x="1250" y="411" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_2_0" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#68717C;endArrow=block;endFill=1;dashed=1;dashPattern=9 4 2 4;" edge="1" parent="1" source="cell_2_0" target="cell_2_1">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1380" y="295.0" />
+            <mxPoint as="targetPoint" x="1390" y="295.0" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_2_1" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#68717C;endArrow=block;endFill=1;dashed=1;dashPattern=9 4 2 4;" edge="1" parent="1" source="cell_2_1" target="cell_2_2">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1520" y="295.0" />
+            <mxPoint as="targetPoint" x="1530" y="295.0" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bank_next_0" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2F6388;endArrow=block;endFill=1;" edge="1" parent="1" source="bank_0_2" target="bank_1_0">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="760" y="615" />
+            <mxPoint as="targetPoint" x="800" y="615" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bank_next_1" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2F6388;endArrow=block;endFill=1;" edge="1" parent="1" source="bank_1_2" target="bank_2_0">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1210" y="615" />
+            <mxPoint as="targetPoint" x="1250" y="615" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="param_next_0" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#95713A;endArrow=block;endFill=1;dashed=1;dashPattern=7 4;" edge="1" parent="1" source="param_0_2" target="param_1_0">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="760" y="817" />
+            <mxPoint as="targetPoint" x="800" y="817" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="param_next_1" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#95713A;endArrow=block;endFill=1;dashed=1;dashPattern=7 4;" edge="1" parent="1" source="param_1_2" target="param_2_0">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1210" y="817" />
+            <mxPoint as="targetPoint" x="1250" y="817" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub" value="每个时间步依次完成Conv1、Conv2、Conv3；下一时间步重新使用同一套阵列，不新增阵列实例。" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=21;fontStyle=0;text;fillColor=none;strokeColor=none;fontColor=#475569;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="70" y="108" width="1660" height="32" />
+        </mxCell>
+        <mxCell id="array_note" value="同一物理阵列&#10;由layer_start触发&#10;逐层运行" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=21;fontStyle=0;text;fillColor=none;strokeColor=none;fontColor=#426A5F;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="65" y="405" width="230" height="66" />
+        </mxCell>
+        <mxCell id="time_0" value="时间步 t=0" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=21;fontStyle=1;text;fillColor=none;strokeColor=none;fontColor=#1E293B;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="350" y="150" width="420" height="42" />
+        </mxCell>
+        <mxCell id="time_1" value="时间步 t=1" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=21;fontStyle=1;text;fillColor=none;strokeColor=none;fontColor=#1E293B;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="800" y="150" width="420" height="42" />
+        </mxCell>
+        <mxCell id="time_2" value="… 时间步 t=15" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=21;fontStyle=1;text;fillColor=none;strokeColor=none;fontColor=#1E293B;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1250" y="150" width="420" height="42" />
+        </mxCell>
+        <mxCell id="timeline" value="横向：层间顺序与时间步推进；纵向：同一物理阵列被反复调用" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=22;fontStyle=0;text;fillColor=none;strokeColor=none;fontColor=#334155;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="320" y="430" width="1240" height="34" />
+        </mxCell>
+        <mxCell id="axis" value="时钟周期 / layer_done → 下一次 layer_start" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=19;fontStyle=0;text;fillColor=none;strokeColor=none;fontColor=#68717C;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="315" y="478" width="1300" height="26" />
+        </mxCell>
+        <mxCell id="bank_0_0" value="输入 A → 输出 B&#10;完成后交换" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=15;fontStyle=0;text;fillColor=none;strokeColor=none;fontColor=#426A5F;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="350" y="575" width="130" height="80" />
+        </mxCell>
+        <mxCell id="bank_0_1" value="输入 B → 输出 A&#10;完成后交换" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=15;fontStyle=0;text;fillColor=none;strokeColor=none;fontColor=#426A5F;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="490" y="575" width="130" height="80" />
+        </mxCell>
+        <mxCell id="bank_0_2" value="输入 A → 输出 B&#10;完成后交换" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=15;fontStyle=0;text;fillColor=none;strokeColor=none;fontColor=#426A5F;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="630" y="575" width="130" height="80" />
+        </mxCell>
+        <mxCell id="bank_1_0" value="输入 B → 输出 A&#10;完成后交换" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=15;fontStyle=0;text;fillColor=none;strokeColor=none;fontColor=#426A5F;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="800" y="575" width="130" height="80" />
+        </mxCell>
+        <mxCell id="bank_1_1" value="输入 A → 输出 B&#10;完成后交换" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=15;fontStyle=0;text;fillColor=none;strokeColor=none;fontColor=#426A5F;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="940" y="575" width="130" height="80" />
+        </mxCell>
+        <mxCell id="bank_1_2" value="输入 B → 输出 A&#10;完成后交换" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=15;fontStyle=0;text;fillColor=none;strokeColor=none;fontColor=#426A5F;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1080" y="575" width="130" height="80" />
+        </mxCell>
+        <mxCell id="bank_2_0" value="输入 A → 输出 B&#10;完成后交换" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=15;fontStyle=0;text;fillColor=none;strokeColor=none;fontColor=#426A5F;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1250" y="575" width="130" height="80" />
+        </mxCell>
+        <mxCell id="bank_2_1" value="输入 B → 输出 A&#10;完成后交换" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=15;fontStyle=0;text;fillColor=none;strokeColor=none;fontColor=#426A5F;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1390" y="575" width="130" height="80" />
+        </mxCell>
+        <mxCell id="bank_2_2" value="输入 A → 输出 B&#10;完成后交换" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=15;fontStyle=0;text;fillColor=none;strokeColor=none;fontColor=#426A5F;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1530" y="575" width="130" height="80" />
+        </mxCell>
+        <mxCell id="bank_note" value="A/B缓冲切换不复制卷积阵列；只改变当前层的输入、输出存储体。" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=20;fontStyle=0;text;fillColor=none;strokeColor=none;fontColor=#426A5F;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="310" y="700" width="1300" height="30" />
+        </mxCell>
+        <mxCell id="param_note" value="参数按layer_index选择；不同层复用同一计算阵列，只切换权重和层描述。" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=20;fontStyle=0;text;fillColor=none;strokeColor=none;fontColor=#806537;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="310" y="900" width="1300" height="30" />
+        </mxCell>
+        <mxCell id="legend" value="浅蓝/浅绿/浅橙：Conv1/Conv2/Conv3执行窗口    灰色点划线：调度控制    棕色虚线：层参数选择    蓝色实线：特征数据流" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;spacing=3;fontColor=#1E293B;fontSize=18;fontStyle=0;text;fillColor=none;strokeColor=none;fontColor=#475569;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="70" y="930" width="1650" height="28" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

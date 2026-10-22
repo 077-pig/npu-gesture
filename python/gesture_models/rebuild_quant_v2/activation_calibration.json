@@ -1,0 +1,58 @@
+{
+  "source_model": "C:\\Users\\LiQ\\Desktop\\game\\src\\Python\\gesture_models\\stage2_cnn_lif_v2_reconstructed\\cnn_lif_improved_best.pt",
+  "calibration_dataset": "C:\\Users\\LiQ\\Desktop\\game\\data\\DVS128Gesture\\frames_t16_uint16.npz",
+  "calibration_rule": "user01-user19 only",
+  "sample_count": 984,
+  "time_steps": 16,
+  "input_scale": 0.007874015748031496,
+  "ranges": {
+    "input": {
+      "min": 0.0,
+      "max": 1.0,
+      "max_abs": 1.0,
+      "int8_scale": 0.007874015748031496,
+      "int8_min": -127,
+      "int8_max": 127
+    },
+    "conv1_relu": {
+      "min": 0.0,
+      "max": 11.632087707519531,
+      "max_abs": 11.632087707519531,
+      "int8_scale": 0.09159124179149238,
+      "int8_min": -127,
+      "int8_max": 127
+    },
+    "conv2_relu": {
+      "min": 0.0,
+      "max": 74.7059097290039,
+      "max_abs": 74.7059097290039,
+      "int8_scale": 0.5882355096771961,
+      "int8_min": -127,
+      "int8_max": 127
+    },
+    "conv3_relu": {
+      "min": 0.0,
+      "max": 206.0585479736328,
+      "max_abs": 206.0585479736328,
+      "int8_scale": 1.6225082517608882,
+      "int8_min": -127,
+      "int8_max": 127
+    },
+    "gap": {
+      "min": 0.0,
+      "max": 10.848665237426758,
+      "max_abs": 10.848665237426758,
+      "int8_scale": 0.08542256092462014,
+      "int8_min": -127,
+      "int8_max": 127
+    },
+    "fc_current": {
+      "min": -14.727965354919434,
+      "max": 6.680244445800781,
+      "max_abs": 14.727965354919434,
+      "int8_scale": 0.1159682311410979,
+      "int8_min": -127,
+      "int8_max": 127
+    }
+  }
+}

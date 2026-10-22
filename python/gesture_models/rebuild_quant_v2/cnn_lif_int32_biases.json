@@ -1,0 +1,52 @@
+{
+  "model": "cnn_lif_threshold_0.5",
+  "float_model": "C:\\Users\\LiQ\\Desktop\\game\\src\\Python\\gesture_models\\stage2_cnn_lif_v2_reconstructed\\cnn_lif_improved_best.pt",
+  "input_scale": 0.007874015748031496,
+  "biases": {
+    "conv1.bias": {
+      "shape": [
+        16
+      ],
+      "input_scale": 0.007874015748031496,
+      "weight_scale": 0.016888875660933847,
+      "bias_scale": 0.00013298327292073894,
+      "dtype": "int32",
+      "min": -932,
+      "max": 2427
+    },
+    "conv2.bias": {
+      "shape": [
+        32
+      ],
+      "input_scale": 0.09159124179149238,
+      "weight_scale": 0.01463357013041579,
+      "bias_scale": 0.0013403068600876733,
+      "dtype": "int32",
+      "min": -208,
+      "max": 273
+    },
+    "conv3.bias": {
+      "shape": [
+        64
+      ],
+      "input_scale": 0.5882355096771961,
+      "weight_scale": 0.013782414864367388,
+      "bias_scale": 0.008107305832323714,
+      "dtype": "int32",
+      "min": -58,
+      "max": 24
+    },
+    "classifier.bias": {
+      "shape": [
+        11
+      ],
+      "input_scale": 0.08542256092462014,
+      "weight_scale": 0.009174085977509266,
+      "bias_scale": 0.0007836739183414886,
+      "dtype": "int32",
+      "min": -142,
+      "max": 287
+    }
+  },
+  "output_npz": "C:\\Users\\LiQ\\Desktop\\game\\src\\Python\\gesture_models\\rebuild_quant_v2\\cnn_lif_int32_biases.npz"
+}

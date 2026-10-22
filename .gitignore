@@ -1,0 +1,43 @@
+# ---------- Vivado ----------
+*.cache/
+*.runs/
+*.ip_user_files/
+*.sim/
+*.hw/
+*.Xil/
+*.jou
+*.log
+*.str
+*.dcp
+*.bit
+*.ltx
+*.bin
+*.rpt
+
+# ---------- ModelSim ----------
+work/
+*.wlf
+*.vstf
+*.mpf
+transcript
+modelsim.ini
+
+# ---------- Python ----------
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# ---------- 数据与大文件 ----------
+data/
+dataset/
+*.npz
+*.tiff
+*.zip
+*.7z
+
+# ---------- 系统 ----------
+.DS_Store
+Thumbs.db
+desktop.ini

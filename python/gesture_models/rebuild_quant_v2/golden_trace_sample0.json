@@ -1,0 +1,59 @@
+{
+  "sample_index": 1176,
+  "label": 0,
+  "float_prediction": 0,
+  "fixed_prediction": 0,
+  "time_steps": 16,
+  "input_shape": [
+    16,
+    64,
+    64,
+    2
+  ],
+  "conv1_relu_shape": [
+    16,
+    16,
+    32,
+    32
+  ],
+  "conv2_relu_shape": [
+    16,
+    32,
+    16,
+    16
+  ],
+  "conv3_relu_shape": [
+    16,
+    64,
+    8,
+    8
+  ],
+  "gap_shape": [
+    16,
+    64
+  ],
+  "current_shape": [
+    16,
+    11
+  ],
+  "membrane_shape": [
+    16,
+    11
+  ],
+  "spikes_shape": [
+    16,
+    11
+  ],
+  "scales": {
+    "input": 0.007874015748031496,
+    "conv1_relu": 0.09159124179149238,
+    "conv2_relu": 0.5882355096771961,
+    "conv3_relu": 1.6225082517608882,
+    "gap": 0.08542256092462014,
+    "fc_current": 0.1159682311410979,
+    "conv1_weight": 0.016888875660933847,
+    "conv2_weight": 0.01463357013041579,
+    "conv3_weight": 0.013782414864367388,
+    "fc_weight": 0.009174085977509266
+  }
+}

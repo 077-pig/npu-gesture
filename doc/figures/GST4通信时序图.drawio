@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device" version="24.7.17">
+  <diagram id="gst4-sequence" name="GST4通信时序图">
+    <mxGraphModel dx="1600" dy="1840" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1840" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="GST4通信时序图：样本头确认、帧校验、推理反馈与早退分支" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=29;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=0;fillColor=#F2F6FA;strokeColor=#6F8396;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="45" y="22" width="1510" height="72" />
+        </mxCell>
+        <mxCell id="pc_actor" value="PC / run_testset_288.py" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=22;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#E7F0F7;strokeColor=#4F7691;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="155" y="125" width="350" height="60" />
+        </mxCell>
+        <mxCell id="arm_actor" value="ARM / PS7 + GST4固件" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=22;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#E9F0EA;strokeColor=#557D6A;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1095" y="125" width="350" height="60" />
+        </mxCell>
+        <mxCell id="pc_line" value="" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=20;fontStyle=0;align=center;verticalAlign=middle;spacing=3;rounded=0;fillColor=#B5C7D5;strokeColor=#B5C7D5;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="330" y="180" width="2" height="1200" />
+        </mxCell>
+        <mxCell id="arm_line" value="" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=20;fontStyle=0;align=center;verticalAlign=middle;spacing=3;rounded=0;fillColor=#B9C9BE;strokeColor=#B9C9BE;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1270" y="180" width="2" height="1200" />
+        </mxCell>
+        <mxCell id="m_header_box" value="GST4样本头：magic、版本、尺寸、T、样本号&#10;总载荷、早退开关、头CRC" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#F3F7FA;strokeColor=#2E6288;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="485" y="211.0" width="630" height="58" />
+        </mxCell>
+        <mxCell id="m_header_ack_box" value="ACK：样本头通过" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#F3F7FA;strokeColor=#2E6288;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="485" y="280.0" width="630" height="44" />
+        </mxCell>
+        <mxCell id="m_len_box" value="帧头：encoded_bytes + frame_crc" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#F3F7FA;strokeColor=#2E6288;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="485" y="350.0" width="630" height="44" />
+        </mxCell>
+        <mxCell id="m_len_ack_box" value="ACK：帧长度合法，可发送载荷" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#F3F7FA;strokeColor=#2E6288;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="485" y="412.0" width="630" height="44" />
+        </mxCell>
+        <mxCell id="m_payload_box" value="当前帧载荷：DENSE 或 ZERO-RLE" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#F3F7FA;strokeColor=#2E6288;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="485" y="482.0" width="630" height="44" />
+        </mxCell>
+        <mxCell id="act_decode" value="载荷接收与CRC校验&#10;失败 → NAK + 错误响应" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#FFF0EE;strokeColor=#B56B5D;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="915" y="545" width="290" height="62" />
+        </mxCell>
+        <mxCell id="decode" value="DENSE读取 / ZERO-RLE解码&#10;写入HWC16输入缓存" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#EEF4F8;strokeColor=#6E8CA2;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="915" y="615" width="290" height="62" />
+        </mxCell>
+        <mxCell id="axi_start" value="AXI-Lite：写入帧数据并启动&#10;控制寄存器 CTRL_START" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#F1F3F5;strokeColor=#7C8791;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="915" y="685" width="290" height="62" />
+        </mxCell>
+        <mxCell id="frame_done" value="等待 STATUS_FRAME_DONE&#10;读取11类脉冲计数" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#EAF2EC;strokeColor=#638875;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="915" y="755" width="290" height="62" />
+        </mxCell>
+        <mxCell id="decision" value="ARM软件早退判断&#10;处理帧数 ≥ 8&#10;领先连续 ≥ 3 且差值 ≥ 3" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#FFF5DE;strokeColor=#B68A38;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="915" y="825" width="290" height="88" />
+        </mxCell>
+        <mxCell id="m_frame_ack_box" value="ACK：当前帧完成，继续下一帧" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#F3F7FA;strokeColor=#2E6288;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="485" y="948.0" width="630" height="44" />
+        </mxCell>
+        <mxCell id="m_next_len_box" value="下一帧：帧长度 + CRC → ACK&#10;再发送下一帧载荷" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#F3F7FA;strokeColor=#2E6288;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="485" y="1011.0" width="630" height="58" />
+        </mxCell>
+        <mxCell id="loop_note" value="循环处理&#10;frame = 0 … T−1&#10;直到早退或完整序列" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#F7F9FB;strokeColor=#CBD5E1;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="70" y="650" width="235" height="90" />
+        </mxCell>
+        <mxCell id="early_branch" value="早退条件满足？&#10;YES：EARLY_ACK + 最终响应&#10;NO：发送普通 ACK，继续下一帧" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#FFF4D9;strokeColor=#B68A38;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="835" y="1100" width="450" height="125" />
+        </mxCell>
+        <mxCell id="m_early_ack_box" value="EARLY_ACK（PC停止发送剩余帧）" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=19;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#FFF6E5;strokeColor=#A36A18;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="485" y="1238.0" width="630" height="44" />
+        </mxCell>
+        <mxCell id="m_final_box" value="GST4最终响应：RSP4、样本号、类别、状态&#10;处理帧数、reason、11类计数/膜电位、响应CRC" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#F3F7FA;strokeColor=#2E6288;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="485" y="1341.0" width="630" height="58" />
+        </mxCell>
+        <mxCell id="response_check" value="校验响应CRC&#10;核对样本号 / status&#10;used_frames / predicted_class" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#EAF1F7;strokeColor=#63839A;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="80" y="1490" width="300" height="82" />
+        </mxCell>
+        <mxCell id="error_header" value="头校验失败：返回 NAK" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#FFF0EE;strokeColor=#B24A3B;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="75" y="330" width="300" height="72" />
+        </mxCell>
+        <mxCell id="error_frame" value="长度/CRC/硬件失败：返回 NAK" style="whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#1E293B;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;spacing=3;rounded=1;arcSize=12;fillColor=#FFF0EE;strokeColor=#B24A3B;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="75" y="450" width="300" height="72" />
+        </mxCell>
+        <mxCell id="m_header_in" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2E6288;endArrow=none;endFill=1;" edge="1" parent="1" target="m_header_box">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="334" y="240" />
+            <mxPoint as="targetPoint" x="485" y="240" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_header_out" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2E6288;endArrow=block;endFill=1;" edge="1" parent="1" source="m_header_box">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1115" y="240" />
+            <mxPoint as="targetPoint" x="1266" y="240" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_header_ack_in" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2E6288;endArrow=none;endFill=1;" edge="1" parent="1" target="m_header_ack_box">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1266" y="302" />
+            <mxPoint as="targetPoint" x="1115" y="302" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_header_ack_out" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2E6288;endArrow=block;endFill=1;" edge="1" parent="1" source="m_header_ack_box">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="485" y="302" />
+            <mxPoint as="targetPoint" x="334" y="302" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_len_in" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2E6288;endArrow=none;endFill=1;" edge="1" parent="1" target="m_len_box">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="334" y="372" />
+            <mxPoint as="targetPoint" x="485" y="372" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_len_out" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2E6288;endArrow=block;endFill=1;" edge="1" parent="1" source="m_len_box">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1115" y="372" />
+            <mxPoint as="targetPoint" x="1266" y="372" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_len_ack_in" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2E6288;endArrow=none;endFill=1;" edge="1" parent="1" target="m_len_ack_box">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1266" y="434" />
+            <mxPoint as="targetPoint" x="1115" y="434" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_len_ack_out" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2E6288;endArrow=block;endFill=1;" edge="1" parent="1" source="m_len_ack_box">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="485" y="434" />
+            <mxPoint as="targetPoint" x="334" y="434" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_payload_in" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2E6288;endArrow=none;endFill=1;" edge="1" parent="1" target="m_payload_box">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="334" y="504" />
+            <mxPoint as="targetPoint" x="485" y="504" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_payload_out" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2E6288;endArrow=block;endFill=1;" edge="1" parent="1" source="m_payload_box">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1115" y="504" />
+            <mxPoint as="targetPoint" x="1266" y="504" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="local_decode" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#69737E;endArrow=block;endFill=1;dashed=1;dashPattern=7 4;" edge="1" parent="1" target="act_decode">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1266" y="505" />
+            <mxPoint as="targetPoint" x="1060" y="545" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="local_decode2" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#69737E;endArrow=block;endFill=1;dashed=1;dashPattern=7 4;" edge="1" parent="1" source="act_decode" target="decode">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1060" y="607" />
+            <mxPoint as="targetPoint" x="1060" y="615" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="local_axi" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#69737E;endArrow=block;endFill=1;dashed=1;dashPattern=7 4;" edge="1" parent="1" source="decode" target="axi_start">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1060" y="677" />
+            <mxPoint as="targetPoint" x="1060" y="685" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="local_done" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#69737E;endArrow=block;endFill=1;dashed=1;dashPattern=7 4;" edge="1" parent="1" source="axi_start" target="frame_done">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1060" y="747" />
+            <mxPoint as="targetPoint" x="1060" y="755" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="local_dec" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#69737E;endArrow=block;endFill=1;dashed=1;dashPattern=7 4;" edge="1" parent="1" source="frame_done" target="decision">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1060" y="817" />
+            <mxPoint as="targetPoint" x="1060" y="825" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_frame_ack_in" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2E6288;endArrow=none;endFill=1;" edge="1" parent="1" target="m_frame_ack_box">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1266" y="970" />
+            <mxPoint as="targetPoint" x="1115" y="970" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_frame_ack_out" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2E6288;endArrow=block;endFill=1;" edge="1" parent="1" source="m_frame_ack_box">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="485" y="970" />
+            <mxPoint as="targetPoint" x="334" y="970" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_next_len_in" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2E6288;endArrow=none;endFill=1;" edge="1" parent="1" target="m_next_len_box">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="334" y="1040" />
+            <mxPoint as="targetPoint" x="485" y="1040" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_next_len_out" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2E6288;endArrow=block;endFill=1;" edge="1" parent="1" source="m_next_len_box">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1115" y="1040" />
+            <mxPoint as="targetPoint" x="1266" y="1040" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="branch_in" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#A36A18;endArrow=block;endFill=1;dashed=1;dashPattern=8 4;" edge="1" parent="1" source="decision" target="early_branch">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1060" y="913" />
+            <mxPoint as="targetPoint" x="1060" y="1100" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_early_ack_in" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#A36A18;endArrow=none;endFill=1;dashed=1;dashPattern=8 4;" edge="1" parent="1" target="m_early_ack_box">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1266" y="1260" />
+            <mxPoint as="targetPoint" x="1115" y="1260" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_early_ack_out" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#A36A18;endArrow=block;endFill=1;dashed=1;dashPattern=8 4;" edge="1" parent="1" source="m_early_ack_box">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="485" y="1260" />
+            <mxPoint as="targetPoint" x="334" y="1260" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_final_in" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2E6288;endArrow=none;endFill=1;" edge="1" parent="1" target="m_final_box">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1266" y="1370" />
+            <mxPoint as="targetPoint" x="1115" y="1370" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_final_out" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#2E6288;endArrow=block;endFill=1;" edge="1" parent="1" source="m_final_box">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="485" y="1370" />
+            <mxPoint as="targetPoint" x="334" y="1370" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="check_in" style="edgeStyle=none;rounded=0;html=0;strokeWidth=1.8;strokeColor=#69737E;endArrow=block;endFill=1;dashed=1;dashPattern=7 4;" edge="1" parent="1" target="response_check">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="334" y="1535" />
+            <mxPoint as="targetPoint" x="230" y="1572" />
+            <Array as="points">
+              <mxPoint x="230" y="1535" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="subtitle" value="PC串口回放 ↔ ARM/PS7软件协议处理；早退判断在ARM侧完成，AXI-Lite用于PS到PL的逐帧控制" style="text;whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#475569;fontSize=18;fontStyle=0;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;rounded=1;arcSize=8;spacing=2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="55" y="100" width="1490" height="34" />
+        </mxCell>
+        <mxCell id="time_axis" value="时间 ↓" style="text;whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#64748B;fontSize=20;fontStyle=1;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;rounded=1;arcSize=8;spacing=2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="710" y="126" width="180" height="55" />
+        </mxCell>
+        <mxCell id="check_label" value="PC结果检查：通过后记录JSONL" style="text;whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#475569;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;rounded=1;arcSize=8;spacing=2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="80" y="1430" width="300" height="42" />
+        </mxCell>
+        <mxCell id="error_note" value="NAK后读取带错误状态的最终响应" style="text;whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#B24A3B;fontSize=14;fontStyle=0;align=center;verticalAlign=middle;strokeColor=#FFFFFF;fillColor=#FFFFFF;rounded=1;arcSize=8;spacing=2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="55" y="535" width="335" height="50" />
+        </mxCell>
+        <mxCell id="legend" value="蓝色实线：串口数据/应答    灰色虚线：ARM本地控制与AXI-Lite    橙色虚线：早退分支    红色虚线：错误旁路" style="text;whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#475569;fontSize=17;fontStyle=0;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;rounded=1;arcSize=8;spacing=2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="70" y="1630" width="1460" height="32" />
+        </mxCell>
+        <mxCell id="scope" value="图中AXI-Lite、FRAME_DONE和计数读取是ARM到PL的控制/状态交互；早退规则由ARM软件执行，不表示PL内部另有早退判定器。" style="text;whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#64748B;fontSize=16;fontStyle=0;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;rounded=1;arcSize=8;spacing=2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="70" y="1674" width="1460" height="54" />
+        </mxCell>
+        <mxCell id="source" value="协议依据：PC GST4发送脚本、ARM main.c、gesture_stream_v4.h；本图不替代串口抓包或Vivado时序波形。" style="text;whiteSpace=wrap;html=0;fontFamily=Microsoft YaHei;fontColor=#94A3B8;fontSize=14;fontStyle=0;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;rounded=1;arcSize=8;spacing=2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="70" y="1735" width="1460" height="25" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
